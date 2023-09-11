@@ -11,7 +11,7 @@ It runs in one of two modes:
 The **Side Car Mode** configuration is in this repository and presents a simple reverse proxy to an individual service. The intention for this image mode is for the container to be run inside the same pod as the service it provides authentication for.
 
 ## Gateway Mode
-The **Gateway Mode** is expected to be provided with the configuration via a mount to `/etc/caddy/Caddyfile.json`. This mode is intended to serve as a gateway and provide authentication to multiple pod services.
+The **Gateway Mode** expects configuration to be mounted at `/etc/caddy/Caddyfile.json`. The app is intended to run as a stand-alone pod which serves as a gateway that handles authentication/routing to multiple paths/services.
 
 ## Configuration
 The Caddy CRC plugin has three configuration options an example of which is shown below
