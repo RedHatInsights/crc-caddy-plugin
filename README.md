@@ -33,7 +33,7 @@ The Caddy CRC plugin has three configuration options, an example of which is sho
 * `output` - defines where the output of the log stream goes, either `stdout` or `stderr`
 * `bop` - defines the host:port for the BOP server, or MBOP in the case of ephemeral environments
   * For Basic Auth, BOP provides an endpoint to check the username/password
-  * For JWT Auth BOP provides the JWT public cert used to validate the credentials
+  * For JWT Auth, BOP provides the JWT public certificate that is used to validate JWT tokens which contain user identity info
 * `whitelist` - defines a list of paths that will not be authenticated as a comma separated list
 
 ## crcauthlib
