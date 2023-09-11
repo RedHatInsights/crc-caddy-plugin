@@ -14,7 +14,7 @@ The **Side Car Mode** configuration is in this repository and presents a simple 
 The **Gateway Mode** expects configuration to be mounted at `/etc/caddy/Caddyfile.json`. The app is intended to run as a stand-alone pod which serves as a gateway that handles authentication/routing to multiple paths/services.
 
 ## Configuration
-The Caddy CRC plugin has three configuration options an example of which is shown below
+The Caddy CRC plugin has three configuration options, an example of which is shown below:
 
 ```
 :8080 {
