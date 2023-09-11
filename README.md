@@ -8,7 +8,7 @@ It runs in one of two modes:
 * **Gateway Mode** - where configuration is taken from `/etc/caddy/Caddyfile.json`
 
 ## Side Car Mode
-The **Side Car Mode** configuration is in this repository and presents a simply reverse proxy to an individual service. The intention for this image mode is for the container to be run up inside the same pod as the service it is authenticating.
+The **Side Car Mode** configuration is in this repository and presents a simple reverse proxy to an individual service. The intention for this image mode is for the container to be run inside the same pod as the service it provides authentication for.
 
 ## Gateway Mode
 The **Gateway Mode** is expected to be provided with the configuration via a mount to `/etc/caddy/Caddyfile.json`. This mode is intended to serve as a gateway and provide authentication to multiple pod services.
