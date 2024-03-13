@@ -12,10 +12,10 @@ chai.use(chaiJSON);
 const url = 'http://localhost:9080';
 
 // Test / route
-describe('/GET /',() => {
+describe('/GET /metrics',() => {
     it('should return 200', (done) => {
         chai.request(url)
-            .get('/')
+            .get('/metrics')
             .end((err,res) => {
                 res.should.have.status(200);
             done();
