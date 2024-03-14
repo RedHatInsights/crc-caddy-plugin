@@ -13,6 +13,17 @@ services:
       CADDY_BOP_URL: mbop
       CADDY_PORT: 9080
 
+  mbop:
+    image: quay.io/cloudservices/mbop:${MBOP_IMAGE_TAG:-latest}
+    ports:
+      - "8090:8090"
+    environment:
+      KEYCLOAK_SERVER: http://keycloak:8080
+      KEYCLOAK_USERNAME: admin
+      KEYCLOAK_PASSWORD: change_me
+      CADDY_BOP_URL: mbop
+      CADDY_PORT: 9080
+
   keycloak:
     image: quay.io/keycloak/keycloak:${KEYCLOAK_IMAGE_TAG:-23.0.5}
     ports:
