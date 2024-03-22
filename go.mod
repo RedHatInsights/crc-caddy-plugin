@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/caddyserver/caddy/v2 v2.6.4
 	github.com/prometheus/client_golang v1.15.1
-	github.com/redhatinsights/crcauthlib v0.2.2-0.20240315182810-8b26d3ac73c6
+	github.com/redhatinsights/crcauthlib v0.3.0
 )
 
 require (
