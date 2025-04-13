@@ -1,6 +1,8 @@
 module github.com/RedHatInsights/crc-caddy-plugin
 
-go 1.21.0
+go 1.24
+
+toolchain go1.24.2
 
 require (
 	github.com/caddyserver/caddy/v2 v2.8.4
@@ -40,6 +42,7 @@ require (
 	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/cel-go v0.20.1 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/pprof v0.0.0-20231212022811-ec68065c825e // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/huandu/xstrings v1.3.3 // indirect
@@ -87,6 +90,7 @@ require (
 	github.com/spf13/cobra v1.8.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/tailscale/tscert v0.0.0-20240517230440-bbccfbf48933 // indirect
 	github.com/urfave/cli v1.22.14 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
