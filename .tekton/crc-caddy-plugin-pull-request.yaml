@@ -30,7 +30,7 @@ spec:
     value: Dockerfile
   - name: path-context
     value: .
-    pipelineSpec:
+  pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
 
