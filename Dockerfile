@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/go-toolset:1.23.6-4 as build
+FROM registry.access.redhat.com/ubi8/go-toolset:1.25.3-1766089731 as build
 
 RUN mkdir /opt/app-root/src/crccaddyplugin
 WORKDIR /opt/app-root/src/crccaddyplugin
