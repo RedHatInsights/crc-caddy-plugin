@@ -301,6 +301,8 @@ spec:
       params:
       - name: BINARY_IMAGE
         value: $(params.output-image)
+      - name: BINARY_IMAGE_DIGEST
+        value: $(tasks.build-image-index.results.IMAGE_DIGEST)
       runAfter:
       - build-image-index
       taskRef:
