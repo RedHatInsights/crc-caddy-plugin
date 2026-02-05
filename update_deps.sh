@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/caddyserver/caddy/refs/heads/master/go.mo
 go mod edit -module crccaddyplugin
 go mod edit -require github.com/caddyserver/caddy/v2@$CADDY_VERSION
 go mod edit -require github.com/prometheus/client_golang@v1.23.2
-go mod edit -require github.com/redhatinsights/crcauthlib@v0.4.0
+go mod edit -require github.com/redhatinsights/crcauthlib@v0.5.0
 go mod tidy
 
 cp go.mod caddy/
