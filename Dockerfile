@@ -1,27 +1,21 @@
-FROM registry.access.redhat.com/ubi9/go-toolset:1.25.3-1765311584 AS build
+FROM registry.access.redhat.com/ubi9/go-toolset:1.25.5-1769430014 AS build
 
-RUN mkdir /opt/app-root/src/crccaddyplugin
-WORKDIR /opt/app-root/src/crccaddyplugin
+WORKDIR /opt/app-root/src
 
 COPY caddyplugin.go .
-RUN set -exu ; \
-    go mod init crccaddyplugin; \
-    go get github.com/caddyserver/caddy/v2@v2.10.2; \
-    go mod tidy;
+COPY go.mod .
+COPY go.sum .
 
-RUN mkdir /opt/app-root/src/caddy
+RUN mkdir caddy
 WORKDIR /opt/app-root/src/caddy
 
-COPY main.go.template ./main.go
+COPY caddy/main.go .
+COPY caddy/go.mod .
+COPY caddy/go.sum .
 
-RUN set -ex; \
-  go mod init caddy; \
-  go get github.com/caddyserver/caddy/v2@v2.10.2; \
-  go mod edit -replace "github.com/RedHatInsights/crc-caddy-plugin=/opt/app-root/src/crccaddyplugin"; \
-  go mod tidy ;\
-  go build;
+RUN go build
 
-FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:111962e
+FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:8335391c36f9943e8a2de24924ecd79df966cca9
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY candlepin-ca.pem /cas/ca.pem
