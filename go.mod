@@ -17,7 +17,7 @@ require (
 	github.com/caddyserver/certmagic v0.25.1 // indirect
 	github.com/caddyserver/zerossl v0.1.4 // indirect
 	github.com/ccoveille/go-safecast/v2 v2.0.0 // indirect
-	github.com/cloudflare/circl v1.6.2 // indirect
+	github.com/cloudflare/circl v1.6.3 // indirect
 	github.com/coreos/go-oidc/v3 v3.17.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.4 // indirect
