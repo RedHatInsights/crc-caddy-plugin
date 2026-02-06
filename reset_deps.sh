@@ -11,7 +11,7 @@ rm go.mod || true
 rm go.sum || true
 
 curl https://raw.githubusercontent.com/caddyserver/caddy/refs/heads/master/go.mod -o go.mod
-go mod edit -module crccaddyplugin
+go mod edit -module github.com/RedHatInsights/crc-caddy-plugin
 go mod edit -require github.com/caddyserver/caddy/v2@$CADDY_VERSION
 go mod edit -require github.com/prometheus/client_golang@v1.23.2
 go mod edit -require github.com/redhatinsights/crcauthlib@v0.5.0

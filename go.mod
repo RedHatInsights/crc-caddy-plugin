@@ -1,4 +1,4 @@
-module crccaddyplugin
+module github.com/RedHatInsights/crc-caddy-plugin
 
 go 1.25.5
 
