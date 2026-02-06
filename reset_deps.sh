@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script will download go.mod from caddyserver's master branch
+# and resync this project's dependencies to match
+
 CADDY_VERSION="v2.10.2"
 
 set -ex
@@ -14,13 +17,6 @@ go mod edit -require github.com/prometheus/client_golang@v1.23.2
 go mod edit -require github.com/redhatinsights/crcauthlib@v0.5.0
 go mod tidy
 
-cp go.mod caddy/
-cp go.sum caddy/
 cd caddy/
-go mod edit -module caddy
-go mod edit -replace "github.com/RedHatInsights/crc-caddy-plugin=../"
-go mod tidy
-go build
-./caddy version
-./caddy build-info | grep crc-caddy-plugin
+./build.sh
 rm caddy
