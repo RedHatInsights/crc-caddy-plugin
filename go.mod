@@ -2,10 +2,7 @@ module github.com/RedHatInsights/crc-caddy-plugin
 
 go 1.25.5
 
-require (
-	github.com/RedHatInsights/crc-caddy-plugin v0.6.0
-	github.com/prometheus/client_golang v1.23.2
-)
+require github.com/prometheus/client_golang v1.23.2
 
 require (
 	cel.dev/expr v0.25.1 // indirect
