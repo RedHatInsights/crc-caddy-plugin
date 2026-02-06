@@ -10,10 +10,9 @@ RUN mkdir caddy
 WORKDIR /opt/app-root/src/caddy
 
 COPY caddy/main.go .
-COPY caddy/go.mod .
-COPY caddy/go.sum .
+COPY caddy/build.sh .
 
-RUN go build
+RUN bash build.sh
 
 FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:8335391c36f9943e8a2de24924ecd79df966cca9
 
