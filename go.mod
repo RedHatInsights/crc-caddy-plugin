@@ -2,10 +2,7 @@ module github.com/RedHatInsights/crc-caddy-plugin
 
 go 1.25.5
 
-require (
-	github.com/RedHatInsights/crc-caddy-plugin v0.6.0
-	github.com/prometheus/client_golang v1.23.2
-)
+require github.com/prometheus/client_golang v1.23.2
 
 require (
 	cel.dev/expr v0.25.1 // indirect
@@ -13,7 +10,7 @@ require (
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
 	dario.cat/mergo v1.0.1 // indirect
-	github.com/BurntSushi/toml v1.5.0 // indirect
+	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/KimMachineGun/automemlimit v0.7.5 // indirect
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/alecthomas/chroma/v2 v2.20.0 // indirect
