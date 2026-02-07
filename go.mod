@@ -2,10 +2,7 @@ module github.com/RedHatInsights/crc-caddy-plugin
 
 go 1.25.5
 
-require (
-	github.com/RedHatInsights/crc-caddy-plugin v0.6.0
-	github.com/prometheus/client_golang v1.23.2
-)
+require github.com/prometheus/client_golang v1.23.2
 
 require (
 	cel.dev/expr v0.25.1 // indirect
@@ -34,7 +31,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
 	github.com/google/cel-go v0.26.1 // indirect
 	github.com/google/certificate-transparency-go v1.1.8-0.20240110162603-74a5dd331745 // indirect
-	github.com/google/go-tpm v0.9.7 // indirect
+	github.com/google/go-tpm v0.9.8 // indirect
 	github.com/google/go-tspi v0.3.0 // indirect
 	github.com/google/s2a-go v0.1.9 // indirect
 	github.com/google/uuid v1.6.0 // indirect
