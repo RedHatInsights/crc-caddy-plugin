@@ -2,10 +2,7 @@ module github.com/RedHatInsights/crc-caddy-plugin
 
 go 1.25.5
 
-require (
-	github.com/RedHatInsights/crc-caddy-plugin v0.6.0
-	github.com/prometheus/client_golang v1.23.2
-)
+require github.com/prometheus/client_golang v1.23.2
 
 require (
 	cel.dev/expr v0.25.1 // indirect
@@ -148,7 +145,7 @@ require (
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/slackhq/nebula v1.9.7 // indirect
 	github.com/spf13/cast v1.7.0 // indirect
-	github.com/stoewer/go-strcase v1.2.0 // indirect
+	github.com/stoewer/go-strcase v1.3.1 // indirect
 	github.com/urfave/cli v1.22.17 // indirect
 	go.etcd.io/bbolt v1.3.10 // indirect
 	go.opentelemetry.io/otel/metric v1.39.0 // indirect
