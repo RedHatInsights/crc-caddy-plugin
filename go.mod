@@ -45,7 +45,7 @@ require (
 	github.com/mholt/acmez/v3 v3.1.4 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pbnjay/memory v0.0.0-20210728143218-7b4eea64cf58 // indirect
-	github.com/pires/go-proxyproto v0.8.1 // indirect
+	github.com/pires/go-proxyproto v0.11.0 // indirect
 	github.com/quic-go/qpack v0.6.0 // indirect
 	github.com/quic-go/quic-go v0.59.0 // indirect
 	github.com/redhatinsights/platform-go-middlewares/v2 v2.0.0 // indirect
