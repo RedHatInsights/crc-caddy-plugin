@@ -14,7 +14,7 @@ require (
 	github.com/KimMachineGun/automemlimit v0.7.5 // indirect
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/alecthomas/chroma/v2 v2.23.1 // indirect
-	github.com/antlr4-go/antlr/v4 v4.13.0 // indirect
+	github.com/antlr4-go/antlr/v4 v4.13.1 // indirect
 	github.com/aryann/difflib v0.0.0-20210328193216-ff5ff6dc229b // indirect
 	github.com/caddyserver/certmagic v0.25.1 // indirect
 	github.com/caddyserver/zerossl v0.1.4 // indirect
@@ -29,7 +29,7 @@ require (
 	github.com/go-jose/go-jose/v3 v3.0.4 // indirect
 	github.com/go-jose/go-jose/v4 v4.1.3 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
-	github.com/google/cel-go v0.26.1 // indirect
+	github.com/google/cel-go v0.27.0 // indirect
 	github.com/google/certificate-transparency-go v1.3.2 // indirect
 	github.com/google/go-tpm v0.9.8 // indirect
 	github.com/google/go-tspi v0.3.0 // indirect
@@ -145,7 +145,6 @@ require (
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/slackhq/nebula v1.9.7 // indirect
 	github.com/spf13/cast v1.10.0 // indirect
-	github.com/stoewer/go-strcase v1.3.1 // indirect
 	github.com/urfave/cli v1.22.17 // indirect
 	go.etcd.io/bbolt v1.4.3 // indirect
 	go.opentelemetry.io/otel/metric v1.39.0 // indirect
