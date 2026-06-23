@@ -6,7 +6,7 @@ This Caddy image presents a reverse proxy to an individual service. It is intend
 
 ## Prerequisites
 
-- Go 1.25.5 or later
+- Go 1.25.9 or later
 - Docker or Podman (for container builds)
 - Access to a BOP/MBOP authentication service
 
@@ -131,7 +131,7 @@ docker build -t crc-caddy-plugin:local .
 ```
 
 The Dockerfile uses a two-stage build:
-1. **Build stage**: Compiles the Go binary in a Go 1.25.5 container
+1. **Build stage**: Compiles the Go binary in a Go 1.25.9 container
 1. **Runtime stage**: Packages the binary in a Red Hat UBI9 minimal image
 
 ### Testing

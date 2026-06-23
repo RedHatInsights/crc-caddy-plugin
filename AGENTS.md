@@ -9,13 +9,12 @@ The CRC Caddy plugin is a middleware module for Caddy v2 HTTP server that provid
 ## Dependencies
 
 **Runtime:**
-- Caddy v2.10.2 (HTTP server framework; plugin lifecycle and config parsing)
-- crcauthlib v0.6.0 (authentication logic; Basic Auth and JWT validation)
-- Prometheus client_golang v1.23.2 (metrics collection for request latency/duration)
-- Nebula v1.9.7 (VPN mesh networking; transitive dependency; pinned for compatibility)
+- Caddy (HTTP server framework; plugin lifecycle and config parsing)
+- crcauthlib (authentication logic; Basic Auth and JWT validation)
+- Prometheus client_golang (metrics collection for request latency/duration)
 
 **Build:**
-- Go 1.25.5
+- Go 1.25.9
 - Docker/Podman (multi-stage container builds)
 
 **CI/CD:**
@@ -53,7 +52,7 @@ For detailed design decisions, dependency points, and tradeoffs, see [ARCHITECTU
 
 ## Code Style
 
-**Language version:** Go 1.25.5
+**Language version:** Go 1.25.9
 
 **Formatting:** Standard Go formatting conventions apply. No explicit linter configuration (`.golangci.yml`) is present in the repository.
 
@@ -69,11 +68,9 @@ For detailed design decisions, dependency points, and tradeoffs, see [ARCHITECTU
 
 3. **BOP is the single source of auth truth.** The plugin is stateless and does not cache credentials, tokens, or JWT certificates. Every request triggers an authentication check via BOP. Do not suggest adding local caching or session storage without understanding the ephemeral environment tradeoff (see [ARCHITECTURE.md][architecture] § Stateless Middleware).
 
-4. **Nebula dependency is pinned to v1.9.7.** Do not upgrade Nebula to v1.10+ without verifying Konflux build pipeline compatibility. The downgrade from v1.10+ to v1.9.7 (commit `842f228`) was deliberate to resolve a compatibility issue.
+4. **Custom Caddy binary build pattern.** The `caddy/build.sh` script uses a specific module replacement pattern. Do not modify `caddy/main.go` or the build script without understanding the xcaddy-style build workflow. The script modifies `go.mod` in-place during the build process.
 
-5. **Custom Caddy binary build pattern.** The `caddy/build.sh` script uses a specific module replacement pattern. Do not modify `caddy/main.go` or the build script without understanding the xcaddy-style build workflow. The script modifies `go.mod` in-place during the build process.
-
-6. **No linter configs exist in CI.** While you may find references to linting best practices, no `.golangci.yml`, `.golangci-lint.toml`, or similar files are present. Do not assume CI enforces linting checks beyond what is defined in `.tekton/` pipeline files.
+5. **No linter configs exist in CI.** While you may find references to linting best practices, no `.golangci.yml`, `.golangci-lint.toml`, or similar files are present. Do not assume CI enforces linting checks beyond what is defined in `.tekton/` pipeline files.
 
 [crcauthlib-repo]: https://github.com/redhatinsights/crcauthlib
 [clowder-repo]: https://github.com/RedHatInsights/clowder
