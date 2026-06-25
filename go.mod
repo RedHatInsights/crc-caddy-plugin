@@ -157,5 +157,5 @@ require (
 	golang.org/x/tools v0.42.0 // indirect
 	google.golang.org/grpc v1.78.0 // indirect
 	google.golang.org/protobuf v1.36.11 // indirect
-	howett.net/plist v1.0.0 // indirect
+	howett.net/plist v1.0.1 // indirect
 )
