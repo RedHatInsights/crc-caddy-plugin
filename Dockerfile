@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/go-toolset:1.25.5-1769430014 AS build
+FROM registry.access.redhat.com/ubi9/go-toolset:1.25.9-1778675823 AS build
 
 WORKDIR /opt/app-root/src
 
@@ -14,7 +14,7 @@ COPY caddy/build.sh .
 
 RUN bash build.sh
 
-FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:latest
+FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:latest-1781525673@sha256:eee8ac0022e2f73f313f2e4d494c5c48831ce1e85c06002cff5455c35e1df39c
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY candlepin-ca.pem /cas/ca.pem

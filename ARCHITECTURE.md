@@ -34,12 +34,11 @@ The plugin follows Caddy's [plugin architecture][caddy-extending], registering i
 
 ### External Dependencies
 
-| Dependency | Version | Purpose | Critical Path |
-|-----------|---------|---------|---------------|
-| [Caddy v2][caddy-repo] | v2.10.2 | HTTP server framework | Plugin lifecycle, config parsing, HTTP handling |
-| [crcauthlib][crcauthlib-repo] | v0.6.0 | Authentication logic | All auth validation (Basic + JWT) |
-| [Prometheus client][prometheus-client] | v1.23.2 | Metrics collection | Request latency/duration histograms |
-| [Nebula][nebula-repo] | v1.9.7 | VPN mesh networking | Transitive dependency; downgraded from v1.10+ for compatibility |
+| Dependency | Purpose | Critical Path |
+|-----------|---------|---------------|
+| [Caddy v2][caddy-repo] | HTTP server framework | Plugin lifecycle, config parsing, HTTP handling |
+| [crcauthlib][crcauthlib-repo] | Authentication logic | All auth validation (Basic + JWT) |
+| [Prometheus client][prometheus-client] | Metrics collection | Request latency/duration histograms |
 
 ### Internal Dependency Points
 
@@ -73,14 +72,6 @@ The plugin follows Caddy's [plugin architecture][caddy-extending], registering i
 
 **Impact**: Custom bucket ranges (`[15, 30, 60, 180, 240, 960, 1800]` seconds) are optimized for slow ephemeral backends; not suitable for low-latency production services.
 
-### Tradeoff: Nebula v1.9.7 Downgrade
-
-**Decision**: Nebula dependency pinned to v1.9.7 (see `go.mod:55` and commit `842f228`).
-
-**Rationale**: Compatibility issue with newer Nebula releases in the Konflux build pipeline.
-
-**Impact**: Security and feature updates in Nebula v1.10+ are not available. Requires periodic reevaluation for backported fixes.
-
 ## Build and Deployment
 
 ### Custom Caddy Binary
@@ -113,12 +104,10 @@ The container is deployed in Red Hat ephemeral environments via the [Clowder ope
 - Add unit tests for whitelist matching and request flow
 - Implement certificate refresh on TTL expiration
 - Add structured logging (JSON) for audit trail
-- Evaluate Nebula upgrade path after Konflux compatibility resolution
 
 [crcauthlib-repo]: https://github.com/redhatinsights/crcauthlib
 [caddy-repo]: https://github.com/caddyserver/caddy
 [caddy-extending]: https://caddyserver.com/docs/extending-caddy
 [prometheus-client]: https://github.com/prometheus/client_golang
-[nebula-repo]: https://github.com/slackhq/nebula
 [xcaddy-repo]: https://github.com/caddyserver/xcaddy
 [clowder-repo]: https://github.com/RedHatInsights/clowder
