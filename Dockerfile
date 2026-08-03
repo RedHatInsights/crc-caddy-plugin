@@ -14,7 +14,7 @@ COPY caddy/build.sh .
 
 RUN bash build.sh
 
-FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:latest-1781525673@sha256:eee8ac0022e2f73f313f2e4d494c5c48831ce1e85c06002cff5455c35e1df39c
+FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi@sha256:aa3bd9e7ae5a183a46fab829aa3eda1ab3fa8ac7f6b2291dee14e48c1ec8c74c
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY candlepin-ca.pem /cas/ca.pem
