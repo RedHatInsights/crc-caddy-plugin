@@ -1,6 +1,6 @@
 module github.com/RedHatInsights/crc-caddy-plugin
 
-go 1.25.9
+go 1.26.5
 
 require (
 	github.com/caddyserver/caddy/v2 v2.11.4
