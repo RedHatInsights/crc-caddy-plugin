@@ -24,7 +24,6 @@ docker --config="$DOCKER_CONF" login -u="$RH_REGISTRY_USER" -p="$RH_REGISTRY_TOK
 docker --config="$DOCKER_CONF" build -t "${IMAGE}:${IMAGE_TAG}-PR" .
 docker --config="$DOCKER_CONF" push "${IMAGE}:${IMAGE_TAG}-PR"
 
-# bypass Jenkins junit checks for now, we have no tests running...
 mkdir -p $WORKSPACE/artifacts
 cat << EOF > $WORKSPACE/artifacts/junit-dummy.xml
 <testsuite tests="1">
