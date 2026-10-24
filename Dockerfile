@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/hi/go:1.26.5-builder@sha256:b163b5484b7b776b285d851414039ed21fc358f4249ecb2901e0f1ba2db2e9b6 AS build
+FROM registry.access.redhat.com/hi/go:1.26.10-builder@sha256:4162773224c8cb37a037cb7aef4665456b091f5b7ef01c6f15a465eb6341a66d AS build
 
 WORKDIR /opt/app-root/src
 
@@ -14,7 +14,7 @@ COPY caddy/build.sh .
 
 RUN bash build.sh
 
-FROM registry.access.redhat.com/hi/caddy:latest@sha256:f4e737d9b4360c468d0b4b94b2d9e61e23f0c00317d2949eb8665b3a7fa8b63e
+FROM registry.access.redhat.com/hi/caddy:latest@sha256:8a03f687a6866d136daefed47dc2926522264b4267385e77fade8f072eb3fee0
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY candlepin-ca.pem /cas/ca.pem
